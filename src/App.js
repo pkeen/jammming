@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import SearchBar from './components/SearchBar'
+import SearchResults from './components/SearchResults'
+import Playlist from './components/Playlist'
 
 function App() {
+
+  const searchResults = [{name: 'Two', album: 'Two', artist: 'Me'}, {name: 'In the Woods', album: 'In the Woods', artist: 'Changing Faces'}];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Ja<span class="highlight">mmm</span>ing</h1>
+      <div class="App">
+        <SearchBar />
+        <div class="App-playlist">
+          <SearchResults searchResults={searchResults}/>
+          <Playlist />
+        </div>
+      </div>
     </div>
   );
 }
