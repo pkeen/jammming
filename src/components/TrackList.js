@@ -1,14 +1,15 @@
 import React from 'react';
+import Track from './Track';
 
-const TrackList = ({searchResults}) => {
+const TrackList = ({tracks}) => {
 
-    searchResults = searchResults.map((searchResult) => {
-        return <li><p>{searchResult.name}, {searchResult.artist}, {searchResult.album}</p></li>
+    tracks = tracks.map((track) => {
+        return <Track name={track.name} artist={track.artist} album={track.album} />
     })
 
     return (
         <div className="TrackList">
-            <ul>{searchResults}</ul>
+            <ul>{tracks}</ul>
         </div>
     );
 }
